@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-14 17:45:44
-@modify date 2021-11-14 21:54:25
+@modify date 2021-11-15 19:22:11
 @desc [Implementing Gauss Elimination method with partial pivoting]
 '''
 
@@ -58,10 +58,42 @@ def forward_elimination(a: np.array,  pivot_flag: bool = False) -> np.array:
         if pivot_flag: a = pivot(a, r)
     return a
 
-a = np.array([[1,2,3],[4,5,6],[7,8,9]], dtype = np.float64)
+a = np.array([[0,2,0,1,0],[2,2,3,2,-2],[4,-3,0,1,-7], [6,1,-6,-5,6]], dtype = np.float64)
 
 # Without pivoting
-print(a, forward_elimination(a), sep = "\n") 
+print("Without Pivoting: ", a, forward_elimination(a), sep = "\n") 
+
+# a = np.array([[0,2,0,1,0],[2,2,3,2,-2],[4,-3,0,1,-7], [6,1,-6,-5,6]], dtype = np.float64)
 
 # With pivoting
-print(a, forward_elimination(a, pivot_flag=True), sep = "\n")
+print("With Pivoting: ", a, forward_elimination(a, pivot_flag=True), sep = "\n")
+
+# Backward substitution
+def back_substitution(fw_a: np.array) -> np.array:
+    """Takes in an array in row reduced echelon form and performs back substitution for getting the solution to the system of linear equations
+
+    Args:
+        fw_a (np.array): [Row reduced array (REF) of augmented matrix of a system of linear equations]
+
+    Returns:
+        np.array: [Solution]
+    """
+    a = copy.copy(fw_a)
+    nr, _ = a.shape
+    
+    # Initialize all the solutions to be zeros
+    solutions = np.zeros(nr)
+
+    # Start from last row and go upto the first
+    for r in range(nr - 1, -1, -1):  
+        # Compute the dot product of the rth row and the solutions column
+        dot_product = np.dot(a[r, :-1], solutions)
+        # Compute the rhs
+        rhs = fw_a[r, nr] - dot_product
+        # Find the rth element of the solutions array
+        solutions[r] = rhs / a[r, r]
+ 
+    return solutions
+
+# Solve the system of equations
+print("Solution", back_substitution(forward_elimination(a, pivot_flag=True)), sep = "\n")
