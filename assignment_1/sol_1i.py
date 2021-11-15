@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-14 17:45:44
-@modify date 2021-11-15 19:22:11
+@modify date 2021-11-15 19:30:25
 @desc [Implementing Gauss Elimination method with partial pivoting]
 '''
 
@@ -68,6 +68,22 @@ print("Without Pivoting: ", a, forward_elimination(a), sep = "\n")
 # With pivoting
 print("With Pivoting: ", a, forward_elimination(a, pivot_flag=True), sep = "\n")
 
+def dot_product(a1:np.array, a2:np.array) -> object:
+    """Takes two numpy vectors, computes their dot product and returns the same
+
+    Args:
+        a1 (np.array): [A vector]
+        a2 (np.array): [A vector]
+
+    Returns:
+        object: [Dot product of vectors]
+    """
+    n = len(a1)
+    dp = 0.0
+    for i in range(n):
+        dp += a1[i] * a2[i]
+    return dp
+
 # Backward substitution
 def back_substitution(fw_a: np.array) -> np.array:
     """Takes in an array in row reduced echelon form and performs back substitution for getting the solution to the system of linear equations
@@ -87,9 +103,9 @@ def back_substitution(fw_a: np.array) -> np.array:
     # Start from last row and go upto the first
     for r in range(nr - 1, -1, -1):  
         # Compute the dot product of the rth row and the solutions column
-        dot_product = np.dot(a[r, :-1], solutions)
+        dp = dot_product(a[r, :-1], solutions)
         # Compute the rhs
-        rhs = fw_a[r, nr] - dot_product
+        rhs = fw_a[r, nr] - dp
         # Find the rth element of the solutions array
         solutions[r] = rhs / a[r, r]
  
