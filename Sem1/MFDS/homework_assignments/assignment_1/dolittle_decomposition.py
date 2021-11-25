@@ -1,14 +1,13 @@
 '''
 @author Vinayak
-@email vnayak@okkular.io / nayakvinayak95@gmail.com
-@create date 2021-11-14 17:45:44
-@modify date 2021-11-25 18:15:46
-@desc [Implementing Gauss Elimination method with partial pivoting]
+@email nayakvinayak95@gmail.com
+@create date 2021-11-25 18:41:40
+@modify date 2021-11-25 20:20:13
+@desc [Perform dolittle LU decomposition using Gauss Elimination Technique]
 '''
 
-import copy
 import numpy as np
-
+import copy
 def pivot(a: np.array, k:int) -> np.array:
     """A function to perform partial pivoting for an array
 
@@ -31,7 +30,7 @@ def pivot(a: np.array, k:int) -> np.array:
     return a
 
 
-def forward_elimination(a: np.array,  pivot_flag: bool = False) -> np.array:
+def decompose(a: np.array,  pivot_flag: bool = False) -> np.array:
     """Takes in an array and reduces it to an upper triangular matrix using forward elimination
 
     Args:
@@ -45,6 +44,9 @@ def forward_elimination(a: np.array,  pivot_flag: bool = False) -> np.array:
     a = copy.copy(a)
     nr, _ = a.shape
 
+    # Initialize the lower triangular L matrix with identity matrix
+    L = np.eye(nr)    
+
     # Pivot if the argument for pivoting is True
     if pivot_flag: a = pivot(a, 0)
 
@@ -53,19 +55,13 @@ def forward_elimination(a: np.array,  pivot_flag: bool = False) -> np.array:
         
         # Make all the elements below leading diagonal zeros
         for r_inner in range(r, nr):
+            L[r_inner, r - 1] = a[r_inner, r-1] / a[r-1, r-1]
             a[r_inner, :] = a[r_inner, :] -  (a[r_inner, r-1] / a[r-1, r-1])* a[r - 1, :]
-            
-        if pivot_flag: a = pivot(a, r)
-    return a
+        if pivot_flag: 
+            a = pivot(a, r)
+    return (a, L)
 
-a = np.array([[0,2,0,1,0],[2,2,3,2,-2],[4,-3,0,1,-7], [6,1,-6,-5,6]], dtype = np.float64)
-
-# Without pivoting
-# print("Without Pivoting: ", a, forward_elimination(a), sep = "\n") 
-
-
-# With pivoting
-# print("With Pivoting: ", a, forward_elimination(a, pivot_flag=True), sep = "\n")
+a = np.array([[0,2,0,1],[2,2,3,2],[4,-3,0,1], [6,1,-6,-5]], dtype = np.float64)
 
 def dot_product(a1:np.array, a2:np.array) -> object:
     """Takes two numpy vectors, computes their dot product and returns the same
@@ -83,32 +79,9 @@ def dot_product(a1:np.array, a2:np.array) -> object:
         dp += a1[i] * a2[i]
     return dp
 
-# Backward substitution
-def back_substitution(fw_a: np.array) -> np.array:
-    """Takes in an array in row reduced echelon form and performs back substitution for getting the solution to the system of linear equations
+U, L = decompose(a, pivot_flag = True)
 
-    Args:
-        fw_a (np.array): [Row reduced array (REF) of augmented matrix of a system of linear equations]
-
-    Returns:
-        np.array: [Solution]
-    """
-    a = copy.copy(fw_a)
-    nr, _ = a.shape
-    
-    # Initialize all the solutions to be zeros
-    solutions = np.zeros(nr)
-
-    # Start from last row and go upto the first
-    for r in range(nr - 1, -1, -1):  
-        # Compute the dot product of the rth row and the solutions column
-        dp = dot_product(a[r, :-1], solutions)
-        # Compute the rhs
-        rhs = fw_a[r, nr] - dp
-        # Find the rth element of the solutions array
-        solutions[r] = rhs / a[r, r]
- 
-    return solutions
-
-# Solve the system of equations
-# print("Solution", back_substitution(forward_elimination(a, pivot_flag=True)), sep = "\n")
+print("a", a, sep = "\n")
+print("U", U, sep = "\n")
+print("L", L, sep = "\n")
+print("L matrixmult U", L @ U, sep = "\n")
