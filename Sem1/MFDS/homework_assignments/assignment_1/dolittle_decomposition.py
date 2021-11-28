@@ -2,7 +2,7 @@
 @author Vinayak
 @email nayakvinayak95@gmail.com
 @create date 2021-11-25 18:41:40
-@modify date 2021-11-25 20:20:13
+@modify date 2021-11-26 09:44:32
 @desc [Perform dolittle LU decomposition using Gauss Elimination Technique]
 '''
 
