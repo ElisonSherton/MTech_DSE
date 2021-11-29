@@ -1,9 +1,9 @@
 '''
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
-@create date 2021-11-14 17:45:44
-@modify date 2021-11-29 21:29:06
-@desc [Implementing Gauss Elimination method with partial pivoting]
+@create date 2021-11-29 21:01:55
+@modify date 2021-11-29 22:14:53
+@desc [Gauss Elimination with and without partial pivoting ]
 '''
 
 import copy
@@ -30,12 +30,26 @@ def pivot(a: np.array, k:int) -> np.array:
     a[pivot_row_position] = temp
     return a
 
+def round(a: float, sig_dig:int = 5) -> np.array:
+    """[Takes an array and keeps only sig_dig digits in the array elements]
 
-def forward_elimination(a: np.array,  pivot_flag: bool = False) -> np.array:
+    Args:
+        a (np.array): [numpy array]
+        sig_dig (int, optional): [Number of significant digits to which to round to]. Defaults to 5.
+
+    Returns:
+        np.array: [Rounded array]
+    """
+    pass
+    
+
+def forward_elimination(a: np.array,  sig_dig:int = 5,
+                        pivot_flag: bool = False) -> np.array:
     """Takes in an array and reduces it to an upper triangular matrix using forward elimination
 
     Args:
         a (np.array): [Input array]
+        sig_dig (int): [How many significant digits to consider]
         pivot_flag (bool): [Whether or not to pivot the rows when reducing them]
 
     Returns:
