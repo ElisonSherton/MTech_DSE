@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-29 20:48:27
-@modify date 2021-11-29 21:28:30
+@modify date 2021-11-30 18:49:17
 @desc [Solution to 1.i for the assignment questions]
 '''
 

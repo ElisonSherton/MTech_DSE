@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-14 17:45:44
-@modify date 2021-11-29 21:29:06
+@modify date 2021-11-30 20:43:21
 @desc [Implementing Gauss Elimination method with partial pivoting]
 '''
 
