@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-29 21:01:55
-@modify date 2021-11-30 21:14:04
+@modify date 2021-12-05 15:59:18
 @desc [Gauss Elimination with and without partial pivoting ]
 '''
 
@@ -120,10 +120,9 @@ def back_substitution(a: List, print_progress:bool = True, sig_dig:int = 5) -> L
 
     # Start from last row and go upto the first
     for r in range(nr - 1, -1, -1):  
-        
         # Compute the sum of product of columns on LHS
         dp = 0.0
-        for idx in range(r, nr):    
+        for idx in range(r + 1, nr):    
             dp = dp + custom_round(a[r][idx] * solutions[idx], sig_dig)
             additions = additions + 1
             multiplications = multiplications + 1
@@ -138,7 +137,7 @@ def back_substitution(a: List, print_progress:bool = True, sig_dig:int = 5) -> L
         print(f"Backward Substitution\n#Additions: {additions:10d}\t#Multiplications: {multiplications:10d}\t#Divisions{divisions:10d}")
     return solutions
 
-a = [[0.,2.,0.,1.,0.],[2.,2.,3.,2.,-2.],[4.,-3.,0.,1.,-7.], [6.,1.,-6.,-5.,6.]]
+# a = [[0.,2.,0.,1.,0.],[2.,2.,3.,2.,-2.],[4.,-3.,0.,1.,-7.], [6.,1.,-6.,-5.,6.]]
 
 # Solve the system of equations
-print("Solution", back_substitution(forward_elimination(a, pivot_flag=True, sig_dig = 6), sig_dig = 6), sep = "\n")
+# print("Solution", back_substitution(forward_elimination(a, pivot_flag=True, sig_dig = 5), sig_dig = 5), sep = "\n")

@@ -2,8 +2,11 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-29 20:48:27
-@modify date 2021-11-30 18:49:17
+@modify date 2021-12-05 15:23:03
 @desc [Solution to 1.i for the assignment questions]
+
+Comment: 
+Since addition of first 1e6 numbers could be done but we can't multiply/divide 1e6 numbers, I am sampling pairs of (n,n+1) where n belongs to (0, 1e6] and then performing all operations on these pairs in a loop to keep a common baseline
 '''
 
 import time
@@ -14,10 +17,10 @@ numbers = list(range(1, 1000001))
 sum_ = 0
 
 start = time.time()
-for n in numbers:
-    sum_ = sum_ + n
-# for n1, n2 in zip(numbers[:100000 - 1], numbers[1:]):
-#     sum_ = n1 + n2
+# for n in numbers:
+#     sum_ = sum_ + n
+for n1, n2 in zip(numbers[:100000 - 1], numbers[1:]):
+    sum_ = n1 + n2
 
 end = time.time()
 addition_time = (end - start) / 1e6
