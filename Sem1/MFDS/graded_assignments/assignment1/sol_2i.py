@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-12-05 17:54:16
-@modify date 2021-12-05 18:43:10
+@modify date 2021-12-06 22:07:15
 @desc [Write a function to check if a given SQUARE matrix is diagonally dominant or not, if not, then indicate if it could be converted into a diagonally dominant matrix]
 
 Algorithm:
@@ -70,8 +70,8 @@ def check_row_sum(matrix: List, indices: List) -> bool:
     for i, r in zip(indices, matrix):
         # Get a slice of the row without the diagonal element
         sub_row = r[:i] + r[(i+1):]
-        # If sum of all other elements is more than the diagonal element, then return False
-        if r[i] <= sum(sub_row):
+        # If sum of absolute values of all other elements is more than the diagonal element, then return False
+        if r[i] <= sum([abs(x) for x in sub_row]):
             return False
     
     return True
