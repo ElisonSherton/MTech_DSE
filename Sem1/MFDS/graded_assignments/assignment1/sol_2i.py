@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-12-05 17:54:16
-@modify date 2021-12-06 22:07:15
+@modify date 2021-12-06 22:14:49
 @desc [Write a function to check if a given SQUARE matrix is diagonally dominant or not, if not, then indicate if it could be converted into a diagonally dominant matrix]
 
 Algorithm:

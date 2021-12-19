@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2021-11-29 21:01:55
-@modify date 2021-12-05 15:59:18
+@modify date 2021-12-07 19:00:11
 @desc [Gauss Elimination with and without partial pivoting ]
 '''
 
