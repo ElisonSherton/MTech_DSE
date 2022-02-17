@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2022-02-16 20:47:43
-@modify date 2022-02-16 22:38:27
+@modify date 2022-02-16 22:39:03
 @desc [Find if GS Algorithm can be applied to the columns of a matrix A]
 '''
 
