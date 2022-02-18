@@ -2,7 +2,7 @@
 @author Vinayak
 @email vnayak@okkular.io / nayakvinayak95@gmail.com
 @create date 2022-02-16 20:27:47
-@modify date 2022-02-16 20:45:55
+@modify date 2022-02-18 12:01:02
 @desc [Generate a tall matrix m x n of the form r.dddd and calc it's frobenius norm]
 '''
 
@@ -25,19 +25,20 @@ def generate_random_entry() -> float:
         if i == 0: digits += "."
     return float(digits)
 
-def create_random_matrix(m:int, n:int) -> List:
+def create_random_matrix(m:int, n:int, wide:bool = False) -> List:
     """[Takes in the number of rows and columns and generates a matrix of size m x n]
 
     Args:
         m (int): Number of rows of the matrix
         n (int): Number of columns of the matrix
+        wide (bool, default = False): Whether wider or square matrix are allowed
 
     Returns:
         List: A matrix as a list of lists
     """
-    
-    if m <= n:
-        raise AssertionError("Requested matrix is square or wide; It must be tall. Please give m > n")
+    if not wide:
+        if m <= n:
+            raise AssertionError("Requested matrix is square or wide; It must be tall. Please give m > n")
     
     A = []
     for i in range(m):
