@@ -1,0 +1,10 @@
+Confluent Workshop Series
+https://github.com/confluentinc/commercial-workshops/tree/master/series-getting-started-with-cc
+
+Getting Started with Confluent: How You Can Set Your Data in Motion
+https://github.com/confluentinc/commercial-workshops/tree/master/series-getting-started-with-cc/workshop-getting-started
+
+Enable Real-Time Data Transformations and Stream Processing with ksqlDB
+https://github.com/confluentinc/commercial-workshops/tree/master/series-getting-started-with-cc/workshop-ksql
+
+

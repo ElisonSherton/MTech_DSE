@@ -1,0 +1,8 @@
+How Real-Time Stream Processing Works with ksqlDB, Animated
+https://www.confluent.io/blog/how-real-time-stream-processing-works-with-ksqldb/?_ga=2.231822879.1877481155.1630309086-315973735.1630135362
+
+To install ksqlDB on local instance 
+https://ksqldb.io/quickstart.html
+
+How ksqlDB Works: Internal Architecture and Advanced Features
+https://www.confluent.io/blog/ksqldb-architecture-and-advanced-features/?mkt_tok=NTgyLVFIWC0yNjIAAAF_HVXI76G-M4qGCNqFBQEomG6-k1gl4HBAb7ZVYbjsEU6qkZA-mdCwAeJaqWyBSSbwYTrhlj_ojO5yeLgFV0azog9IX9j9eRVCy_h29s2sofg6Vg
