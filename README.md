@@ -6,20 +6,20 @@ This public repo contains resources for all the courses covered under MTech Data
 
 Resources include instructor slides, open-source books, supplementary content and the like. Following is the list of courses which I had opted for across the three semesters
 
-|Semester|Course Name|Type|Credits|Pointer(out of 10)|
-|--|--|--|--|--|
-|Sem1|Computer Organization and Software Systems|Compulsory|5|9|
-|Sem1|Data Mining|Compulsory|3|9|
-|Sem1|Data Structures and Algorithm Design|Compulsory|5|8|
-|Sem1|Mathematical Foundation for Data Science|Compulsory|4|10|
-|Sem2|Machine Learning|Compulsory|4|10|
-|Sem2|Introduction to Statistical Methods|Compulsory|3|9|
-|Sem2|Introduction to Data Science|Compulsory|3|10|
-|Sem2|Systems for Data Analytics|Elective|5|10|
-|Sem3|Deep Learning|Compulsory|4||
-|Sem3|Stream Processing & Analytics|Elective|5||
-|Sem3|Big Data Systems|Elective|5||
-|Sem3|Probabilistic Graphical Methods|Elective|4||
+|Semester|Course Name|Type|Credits|
+|--|--|--|--|
+|Sem1|Computer Organization and Software Systems|Compulsory|5|
+|Sem1|Data Mining|Compulsory|3|
+|Sem1|Data Structures and Algorithm Design|Compulsory|5|
+|Sem1|Mathematical Foundation for Data Science|Compulsory|4|
+|Sem2|Machine Learning|Compulsory|4|
+|Sem2|Introduction to Statistical Methods|Compulsory|3|
+|Sem2|Introduction to Data Science|Compulsory|3|
+|Sem2|Systems for Data Analytics|Elective|5|
+|Sem3|Deep Learning|Compulsory|4|
+|Sem3|Stream Processing & Analytics|Elective|5|
+|Sem3|Big Data Systems|Elective|5|
+|Sem3|Probabilistic Graphical Methods|Elective|4|
 
 The course also required us to complete a set of challenging assignments for each semester. Some of them were group assignments and some were individual assignments. A list of the assignments solved by me along with the questions are mentioned as follows. 
 
